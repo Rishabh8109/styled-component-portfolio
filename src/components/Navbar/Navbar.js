@@ -1,11 +1,9 @@
 import React , {useState} from 'react';
 import {Nav , NavbarContainer , NavLink ,MobileIcon } from './NavbarElement';
 import { RiMenuUnfoldLine , RiMenuFoldLine } from "react-icons/ri";
-import {createGlobalStyle} from 'styled-components';
 import NavLinks from './NavLinks';
 import Logo from '../Navbar/Logo';
 import Sidebar from '../sidebar/Sidebar';
-
 
 
 function Navbar() {
@@ -14,15 +12,8 @@ function Navbar() {
   // sidebar open function 
   const OpenSidebar = () => {
       setOpen(!open);
-      
   }
 
-  //gloabl style
-  const GlobalStyle = createGlobalStyle`
-    body {
-      opacity:${({open}) => open ? .5 : 1}
-    }
- `
     return (
        <>
         <Nav>
@@ -37,7 +28,7 @@ function Navbar() {
           </NavbarContainer>
         </Nav>
         <Sidebar open={open}/>
-        <GlobalStyle />
+       
        </>
     )
 }
